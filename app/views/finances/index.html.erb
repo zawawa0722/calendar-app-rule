@@ -1,0 +1,81 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Bar Chart</title>
+</head>
+<body>
+  <div class="titles">
+    <a href="/" class="chart__title">Bar Chart</a>
+    <a href="finances" class="chart-btn">
+      <i class="fas fa-chart-pie"></i>
+    </a>
+  </div>
+  <a href="events" class="calendar-btn">
+    <i class="far fa-calendar-alt"></i>
+  </a>
+    <div style="width: 85vw;">
+        <canvas id="chart" width="600" height="300"></canvas>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js" integrity="sha256-R4pqcOYV8lt7snxMQO/HSbVCFRPMdrhAFMH+vr9giYI=" crossorigin="anonymous"></script>
+    <script>
+        var ctx = $('#chart');
+        var mychart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: [
+                    '１月',
+                    '２月',
+                    '３月',
+                    '４月',
+                    '５月',
+                    '６月',
+                    '７月',
+                    '８月',
+                    '９月',
+                    '10月',
+                    '11月',
+                    '12月'
+                ],
+                datasets: [{
+                    label: '食費',
+                    data: [
+                        9000,4000,2000,10000,2000,2500,1400,3000,2200,3000,1500,4800
+                    ],
+                    backgroundColor: 'deepskyblue',
+                },{
+                    label: '光熱費',
+                    data: [
+                        1000,5000,7800,5500,2600,1200,9000,7000,4000,3700,2200,5600
+                    ],
+                    backgroundColor: 'palegreen',
+                },{
+                    label: '雑費',
+                    data: [
+                        4000,500,1700,5515,3000,4500,3300,1200,2100,3000,4200,3200,1200
+                    ],
+                    backgroundColor: 'gold'
+                }]
+            },
+            options: {
+                title: {
+                    display: true,
+                    text: ''
+                },
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            suggestedMax: 10000,
+                            suggestedMin: 0,
+                            stepSize: 1000,
+                            callback: function (value, index, values) {
+                                return value + '円';
+                            }
+                        },
+                    }]
+                }
+            }
+        });
+    </script>
+</body>
+</html>

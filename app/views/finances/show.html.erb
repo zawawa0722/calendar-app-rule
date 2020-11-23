@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title>家計簿</title> 
+</head>
+<body>
+  <div class="title">
+    <h1>今月の支出</h1>
+  </div>
+  <canvas id="myPieChart"></canvas>
+  <!-- CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.js"></script>
+
+  <script>
+  var ctx = document.getElementById("myPieChart");
+  var myPieChart = new Chart(ctx, {
+    type: 'pie',
+    data: {
+      labels: ["食費", "家賃", "光熱費", "交通費", "雑費"],
+      datasets: [{
+          backgroundColor: [
+              "#afeeee",
+              "#98fb98",
+              "#ffd700",
+              "#ffa07a",
+              "#ffb6c1"
+          ],
+          data: [38, 31, 16, 10, 5]
+      }]
+    },
+    options: {
+      legend: {
+        labels: {
+          fontSize: 20,
+        },
+        position: 'bottom'
+      },
+      layout: {
+        padding: {
+          bottom: 50,
+        },
+      },
+      title: {
+        display: true,
+        text: ''
+      }
+    }
+  });
+  </script>
+  <div class="back__contents">
+    <a href="events", class="back__btn">
+      <p class="back__message1">カレンダーへ戻る</p>
+    </a>
+    <a href="chart", class="chart-go">
+      <p class="chart-go__text">月遷移</p>
+    </a>
+  </div>
+</body>
+</html>
