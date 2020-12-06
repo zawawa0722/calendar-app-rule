@@ -1,24 +1,20 @@
-# README
+# アプリ名
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+calendar-app
 
-Things you may want to cover:
+# 概要
 
-* Ruby version
+カレンダーに家計簿機能を持たせたアプリ
 
-* System dependencies
+# 制作背景
 
-* Configuration
+アプリ一つで生活のデータを細かく把握できるように、カレンダーと家計簿をリンクさせました。
 
-* Database creation
+# DEMO
 
-* Database initialization
+[![Image from Gyazo](https://i.gyazo.com/180732dd7e417479f4548e6a822ab61c.gif)](https://gyazo.com/180732dd7e417479f4548e6a822ab61c)
 
-* How to run the test suite
+# 実装予定の内容
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- 予定に対するコメント機能
+- google map API
