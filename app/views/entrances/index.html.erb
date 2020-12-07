@@ -4,9 +4,15 @@
       <span class="main-heading-primary">Welc<span class="o">o</span>m</span>
       <span class="main-heading-secondary">Calendar App!</span>
     </h1>
-    <a href="events" class="btn__wrapper">
-      <button class="btn btn--stripe">click</button>
-    </a>
+    <%  if user_signed_in? %>
+      <%= link_to events_path, class:"link" do %>
+        <button class="btn btn--stripe">click!</button>
+      <% end %>
+    <% else %>
+      <%= link_to new_user_session_path, class:"link" do %>
+        <button class="btn btn--stripe">ログイン</button>
+      <% end %>
+    <% end %>
   </div>
 </div>
 <!-- symbols -->

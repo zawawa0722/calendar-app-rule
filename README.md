@@ -16,5 +16,5 @@ calendar-app
 
 # 実装予定の内容
 
-- 予定に対するコメント機能
-- google map API
+- マップ機能
+- メモ機能
