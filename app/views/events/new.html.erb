@@ -1,15 +1,28 @@
-/ h1 新規イベント追加
-/ = form_with model: event, url: shops_events_path do |f|
-/   = render "devise/shared/error_messages", resource: f.object
-/   .form-group
-/     = f.label :title
-/     = f.text_field :title, class:'form-control mb-3', required: true
-/   .form-group
-/       = f.label :start_time
-/       br
-/       = f.datetime_select :start_time, {default: Date.today + 19.hours + 00.minutes, minute_step: 10}, class:'form-control bootstrap-date mb-3'
-/   .form-group
-/     = f.label :description
-/     = f.text_area :description, class:'form-control mb-3'
-/   .actions
-/     = f.submit class: "btn btn-primary mb-3 js-event-create-btn"
+<div id="inputScheduleForm" class="modal" tabindex="-1">
+  <div class="modal__content">
+    <div class="modal__header">
+      <h3 class="modal__title">スケジュール登録</h3>
+    </div>
+    <div class="modal__body">
+      <%= form_with model: @event, url: events_path do |f| %>
+        <div  class="col">
+          <p>
+            <span>タイトル</span>
+            <span><%= f.text_field :title, class: "form-control1", placeholder: "タイトルを入力してください" %></span>
+          </p>
+          <span>開始日時</span>
+          <span><%= f.datetime_field  :start, placeholder: "XXXX-XX-XX", class:"field" %> ~ </span><br>
+          <span>終了日時</span>
+          <span><%= f.datetime_field :end, placeholder: "XXXX-XX-XX", class:"field" %></span><br>
+          <span>詳細
+          <%= f.text_area :body, class: "form-control2", placeholder: "タイトルの詳細を記入してください" %></span>
+        </div>
+        <div class="modal__footer">
+          <%= f.submit "登録する", class: "btn-primary" %>
+          <%= f.hidden_field :user_id, :value => current_user.id %>
+          <button type="button" class="btn-default" data-dismiss="modal">閉じる</button>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

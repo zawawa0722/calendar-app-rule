@@ -130,3 +130,55 @@ body {
     transform: scaleY(0);
   }
 }
+
+.modal {
+  position: relative;
+  background-color: grey;
+  &__content {
+    height: 500px;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateY(15%) translateX(-50%);
+  }
+  &__title {
+    font-size: 25px;
+  }
+  &__footer {
+    float: right;
+  }
+}
+.form-control1 {
+  width: 100%;
+  height: 30px;
+  border-radius: 5px;
+  padding: 5px;
+}
+.form-control2 {
+  width: 100%;
+  height: 80px;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.btn-primary {
+  height: 40px;
+  width: 80px;
+  background-color: lightpink;
+  border-radius: 5px;
+  cursor: pointer;
+  border-style: none;
+  margin: 10px;
+}
+
+.btn-default {
+  height: 40px;
+  width: 80px;
+  border-style: none;
+  cursor: pointer;
+}
