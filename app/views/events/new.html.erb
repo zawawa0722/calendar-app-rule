@@ -1,5 +1,5 @@
 <div id="inputScheduleForm" class="modal" tabindex="-1">
-  <div class="modal__content">
+  <div class="modal__content" id="modal">
     <div class="modal__header">
       <h3 class="modal__title">スケジュール登録</h3>
     </div>
@@ -8,20 +8,22 @@
         <div  class="col">
           <p>
             <span>タイトル</span>
-            <span><%= f.text_field :title, class: "form-control1", placeholder: "タイトルを入力してください" %></span>
+            <span><%= f.text_field :title, class: "form-control1", placeholder: "予定名を入力してください" %></span>
           </p>
           <span>開始日時</span>
-          <span><%= f.datetime_field  :starttime, placeholder: "XXXX-XX-XX", class:"field" %> ~ </span><br>
+          <span><%= f.datetime_field  :start_time, placeholder: "XXXX-XX-XX", class:"field" %> ~ </span><br>
           <span>終了日時</span>
-          <span><%= f.datetime_field :endtime, placeholder: "XXXX-XX-XX", class:"field" %></span><br>
+          <span><%= f.datetime_field :end_time, placeholder: "XXXX-XX-XX", class:"field" %></span><br>
           <span>詳細
-          <%= f.text_area :memo, class: "form-control2", placeholder: "タイトルの詳細を記入してください" %></span>
+          <%= f.text_area :body, class: "form-control2", placeholder: "予定の詳細を入力してください" %></span><br>
+          <span>使用予定金額</span>
+          <span><%= f.number_field :consumption, class: "field__consumption", placeholder: "使用予定金額を入力してください"%>
         </div>
         <div class="modal__footer">
           <%= f.submit "登録する", class: "btn-primary" %>
           <%= f.hidden_field :user_id, :value => current_user.id %>
           <a href="/events">
-            <button type="button" class="btn-default" data-dismiss="modal">閉じる</button>
+            <button type="button" class="btn-default" data-dismiss="modal" id="close-modal">閉じる</button>
           </a>
         </div>
       <% end %>

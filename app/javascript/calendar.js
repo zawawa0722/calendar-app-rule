@@ -76,7 +76,8 @@ document.addEventListener("DOMContentLoaded", function () {
     editable: true,
     defaultDate: "local",
     dayMaxEvents: true, // when too many events in a day, show the popover
-    events: "https://fullcalendar.io/demo-events.json?overload-day",
+    // events: "https://fullcalendar.io/demo-events.json?overload-day",
+    events: '/events/create.json',
   });
   calendar.render();
 });

@@ -235,7 +235,7 @@ DEPENDENCIES
   devise
   font-awesome-sass
   jbuilder (~> 2.7)
-  jquery-rails (= 4.3.3)
+  jquery-rails
   listen (~> 3.2)
   mysql2
   pry-rails

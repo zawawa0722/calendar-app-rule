@@ -12,12 +12,21 @@ class EventsController < ApplicationController
   end
 
   def create
-      @event = Event.new(event_params)
-      if @event.save
-        redirect_to events_path
-      else
-        redirect_to new_event_path
+    @event = Event.new(event_params)
+    if @event.save
+      respond_to do |format|
+        format.html { redirect_to events_path }
+        format.json
       end
+    else
+      render :new
+    end
+    # @event = Event.new(event_params)
+    # if @event.save
+    #   redirect_to events_path
+    # else
+    #   redirect_to new_event_path
+    # end
   end
     # @events = Event.where(user_id: current_user.id)
 end
@@ -37,7 +46,7 @@ end
 
 private
 def event_params
-    params.require(:event).permit(:title, :starttime, :endtime, :memo, :user_id)
+    params.require(:event).permit(:title, :start_time, :end_time, :body, :user_id, :consumption)
 end
 
 def move_to_index

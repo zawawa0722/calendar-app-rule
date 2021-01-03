@@ -56,5 +56,5 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'bootstrap', '~> 4.5.2'
 gem 'font-awesome-sass'
 gem 'devise'
-gem 'jquery-rails', '4.3.3'
+gem 'jquery-rails'
 gem 'pry-rails'

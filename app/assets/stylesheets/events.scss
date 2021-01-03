@@ -131,9 +131,10 @@ body {
   }
 }
 
+// 以下モーダルscss
 .modal {
   position: relative;
-  background-color: grey;
+  background-color: gray;
   &__content {
     height: 500px;
     width: 500px;
@@ -154,13 +155,13 @@ body {
   }
 }
 .form-control1 {
-  width: 100%;
+  width: 90%;
   height: 30px;
   border-radius: 5px;
   padding: 5px;
 }
 .form-control2 {
-  width: 100%;
+  width: 90%;
   height: 80px;
   border-radius: 5px;
   padding: 5px;
@@ -197,4 +198,8 @@ body {
   &:hover {
     opacity: 0.7;
   }
+}
+
+.field__consumption {
+  height: 20px;
 }
