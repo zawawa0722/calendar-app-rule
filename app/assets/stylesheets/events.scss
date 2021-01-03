@@ -182,3 +182,19 @@ body {
   border-style: none;
   cursor: pointer;
 }
+
+.add {
+  float: right;
+  height: 35px;
+  width: 100px;
+  font-size: 15px;
+  background-color: navy;
+  color: white;
+  border-radius: 5px;
+  list-style: none;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.7;
+  }
+}

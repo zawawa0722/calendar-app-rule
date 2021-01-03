@@ -7,7 +7,7 @@ class CreateEvents < ActiveRecord::Migration[6.0]
       t.boolean :alltime
       t.text :memo, null: false
       t.integer :consumption
-      # t.references :user, foreign_key: true,
+      t.references :user, foreign_key: true
       t.timestamps
     end
   end

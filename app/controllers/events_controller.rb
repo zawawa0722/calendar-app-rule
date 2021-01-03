@@ -14,9 +14,9 @@ class EventsController < ApplicationController
   def create
       @event = Event.new(event_params)
       if @event.save
-        flash.now[:success] = "予定を登録しました"
+        redirect_to events_path
       else
-        flash.now[:danger] = "予定の登録に失敗しました"
+        redirect_to new_event_path
       end
   end
     # @events = Event.where(user_id: current_user.id)
@@ -37,7 +37,7 @@ end
 
 private
 def event_params
-    params.require(:event).permit(:title, :starttime, :endtime, :memo)
+    params.require(:event).permit(:title, :starttime, :endtime, :memo, :user_id)
 end
 
 def move_to_index
