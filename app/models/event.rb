@@ -1,4 +1,4 @@
 class Event < ApplicationRecord
-  
-  belongs_to :user
+  validates :title, :starttime, :endtime, :memo, presence: true
+  # belongs_to :user
 end

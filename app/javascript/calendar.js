@@ -30,6 +30,15 @@ document.addEventListener("DOMContentLoaded", function () {
     customButtons: {
       addEventButton: {
         text: "予定の追加",
+        // click: function() {
+        //   ('#add-event').click(function(){
+        //     ('#inputScheduleForm').fadeIn();
+        //   });
+        
+        //   ('.close-modal').click(function(){
+        //     ('#inputScheduleForm').fadeOut();
+        //   });
+        // }
         click: function () {
           var dateStr = prompt("予定を入力してください");
           var date = new Date(dateStr + "T00:00:00");

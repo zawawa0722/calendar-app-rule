@@ -1,6 +1,6 @@
 class EventsController < ApplicationController
 
-  before_action :move_to_index, except: [:index]
+  before_action :move_to_index, except: [:index, :new, :create]
 
   def index
     @event = Event.all
@@ -12,32 +12,36 @@ class EventsController < ApplicationController
   end
 
   def create
-    event = Event.new(event_params)
-    event.save!
-    @events = Event.where(user_id: current_user.id)
+      @event = Event.new(event_params)
+      if @event.save
+        flash.now[:success] = "予定を登録しました"
+      else
+        flash.now[:danger] = "予定の登録に失敗しました"
+      end
+  end
+    # @events = Event.where(user_id: current_user.id)
 end
 
-def update
-    event = Event.find(params[:id])
-    @events = Event.where(user_id: current_user.id)
-    event.update(event_params)
-end
+# def update
+#     event = Event.find(params[:id])
+#     @events = Event.where(user_id: current_user.id)
+#     event.update(event_params)
+# end
 
-def destroy
-    @user = User.find(params[:id])
-    event = Event.find(params[:id])
-    event.destroy
-    redirect_to user_path(@user)
-end
+# def destroy
+#     @user = User.find(params[:id])
+#     event = Event.find(params[:id])
+#     event.destroy
+#     redirect_to user_path(@user)
+# end
 
 private
 def event_params
-    params.require(:event).permit(:title, :start, :end, :user_id, :body)
+    params.require(:event).permit(:title, :starttime, :endtime, :memo)
 end
 
 def move_to_index
   unless user_signed_in?
     redirect_to action: :index
   end
-end
 end

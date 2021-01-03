@@ -1,10 +1,10 @@
-$(function() {
-  $('#login-show').click(function(){
-    $('#login-modal').fadeIn();
-  });
+// $(function() {
+//   $('#add-event').click(function(){
+//     $('#inputScheduleForm').fadeIn();
+//   });
 
-  $('.close-modal').click(function(){
-    $('#login-modal').fadeOut();
-  });
+//   $('.close-modal').click(function(){
+//     $('#inputScheduleForm').fadeOut();
+//   });
 
-});
+// });
