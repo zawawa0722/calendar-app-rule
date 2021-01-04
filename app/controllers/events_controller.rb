@@ -4,19 +4,25 @@ class EventsController < ApplicationController
 
   def index
     @event = Event.all
+    
+    respond_to do |format|
+      format.html # index.html.erb
+      format.xml { render :xml => @event }
+      format.json { render :json => @event }
+    end
   end
 
   def new
     @event = Event.new
-    # render plain: render_to_string(partial: 'form_new', layout: false, locals: { event: @event })
   end
 
+  
   def create
     @event = Event.new(event_params)
     if @event.save
       respond_to do |format|
         format.html { redirect_to events_path }
-        format.json
+        format.json { redirect_to events_path }
       end
     else
       render :new
