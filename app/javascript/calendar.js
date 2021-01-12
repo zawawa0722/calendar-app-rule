@@ -11,24 +11,6 @@ import bootstrapPlugin from "@fullcalendar/bootstrap";
 
 document.addEventListener("DOMContentLoaded", function () {
   var calendarEl = document.getElementById("calendar");
-  // var select = function(start, end, allDay) {
-  //   var title = window.prompt("title");
-  //   var data = {event: {title: title,
-  //                       start: start.format(),
-  //                       end: end.format(),
-  //                       allDay: allDay}};
-  //   $.ajax({
-  //       type: "POST",
-  //       url: "/events",
-  //       data: formDate,
-  //       dateType: 'json',
-  //       processDate: false,
-  //       success: function() {
-  //           calendar.fullCalendar('refetchEvents');
-  //       }
-  //   });
-  //   calendar.fullCalendar('unselect');
-  // };
 
   var calendar = new Calendar(calendarEl, {
     plugins: [
@@ -89,19 +71,6 @@ document.addEventListener("DOMContentLoaded", function () {
     editable: true,
     defaultDate: "local",
     dayMaxEvents: true, // when too many events in a day, show the popover
-    eventSources: [
-
-      // your event source
-      {
-        url: '/events.json',
-        method: 'POST',
-        color: 'yellow',   // a non-ajax option
-        textColor: 'black' // a non-ajax option
-      }
-  
-      // any other sources...
-  
-    ],
     events: '/events.json',
     
   });

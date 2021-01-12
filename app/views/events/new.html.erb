@@ -17,17 +17,11 @@
           <span>詳細
           <%= f.text_area :body, class: "form-control2", placeholder: "予定の詳細を入力してください" %></span><br>
           <span>使用予定金額</span>
-          <span><%= f.number_field :consumption, class: "field__consumption", placeholder: "使用予定金額を入力してください"%><br>
-          <span>家賃</span>
-          <span><%= f.check_box :item, class: "field" %><br>
-          <span>食費</span>
-          <span><%= f.check_box :item, class: "field" %><br>
-          <span>光熱費</span>
-          <span><%= f.check_box :item, class: "field" %><br>
-          <span>交通費</span>
-          <span><%= f.check_box :item, class: "field" %><br>
-          <span>雑費</span>
-          <span><%= f.check_box :item, class: "field" %><br>
+          <%= fields_for :finances do |f| %>
+            <span><%= f.number_field :consumption, class: "field__consumption", placeholder: "使用予定金額を入力してください"%><br>
+            <span>金額項目</span>
+            <span><%= f.select :item, [["家賃", "家賃"], ["光熱費", "光熱費"], ["食費", "食費"], ["交通費", "交通費"], ["雑費", "雑費"]], include_blank: "選択して下さい", class: "field" %><br>
+          <% end %>
         </div>
         <div class="modal__footer">
           <%= f.submit "登録する", class: "btn-primary" %>

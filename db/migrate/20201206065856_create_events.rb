@@ -6,7 +6,6 @@ class CreateEvents < ActiveRecord::Migration[6.0]
       t.datetime :end_time, null: false
       t.boolean :alltime
       t.text :body, null: false
-      t.integer :consumption
       t.references :user, foreign_key: true
       t.timestamps
     end
