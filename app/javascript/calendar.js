@@ -1,7 +1,7 @@
 // import "bootstrap/dist/css/bootstrap.css";
 // import "@fontawesome/fontawesome-free/css/all.css";
 
-import { Calendar } from "@fullcalendar/core";
+import { Calendar, startOfDay } from "@fullcalendar/core";
 import dayGridPlugin from "@fullcalendar/daygrid";
 import interactionPlugin from "@fullcalendar/interaction";
 import jaLocale from "@fullcalendar/core/locales/ja";
@@ -11,6 +11,24 @@ import bootstrapPlugin from "@fullcalendar/bootstrap";
 
 document.addEventListener("DOMContentLoaded", function () {
   var calendarEl = document.getElementById("calendar");
+  // var select = function(start, end, allDay) {
+  //   var title = window.prompt("title");
+  //   var data = {event: {title: title,
+  //                       start: start.format(),
+  //                       end: end.format(),
+  //                       allDay: allDay}};
+  //   $.ajax({
+  //       type: "POST",
+  //       url: "/events",
+  //       data: formDate,
+  //       dateType: 'json',
+  //       processDate: false,
+  //       success: function() {
+  //           calendar.fullCalendar('refetchEvents');
+  //       }
+  //   });
+  //   calendar.fullCalendar('unselect');
+  // };
 
   var calendar = new Calendar(calendarEl, {
     plugins: [
@@ -21,7 +39,6 @@ document.addEventListener("DOMContentLoaded", function () {
       bootstrapPlugin,
     ],
     initialView: "dayGridMonth",
-    // themeSystem: "bootstrap4",
     headerToolbar: {
       left: "prevYear,prev,next,nextYear today",
       center: "title",
@@ -58,10 +75,6 @@ document.addEventListener("DOMContentLoaded", function () {
       },
     },
     navLinks: true,
-    navLinkDayClick: function (date, jsEvent) {
-      console.log("day", date.toISOString());
-      console.log("coords", jsEvent.pageX, jsEvent.pageY);
-    },
     selectable: true,
     dateClick: function (info) {
       alert("clicked " + info.dateStr);
@@ -76,8 +89,21 @@ document.addEventListener("DOMContentLoaded", function () {
     editable: true,
     defaultDate: "local",
     dayMaxEvents: true, // when too many events in a day, show the popover
-    // events: "https://fullcalendar.io/demo-events.json?overload-day",
+    eventSources: [
+
+      // your event source
+      {
+        url: '/events.json',
+        method: 'POST',
+        color: 'yellow',   // a non-ajax option
+        textColor: 'black' // a non-ajax option
+      }
+  
+      // any other sources...
+  
+    ],
     events: '/events.json',
+    
   });
   calendar.render();
 });
