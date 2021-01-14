@@ -12,14 +12,19 @@ class EventsController < ApplicationController
 
   def new
     @event = Event.new
+    # @event.finances.new
+    @event.build_finance
   end
 
   
   def create
     @event = Event.new(event_params)
+    @event.build_finance(event_params[:finances_attributes])
+    @finance = Finance.new(finance_params)
 
     respond_to do |format|
       if @event.save
+         @finance.save
         format.html { redirect_to @event, notice: '予定を作成しました' }
         format.json { render :show, status: :created, location: @event  }
       else
@@ -51,7 +56,18 @@ class EventsController < ApplicationController
 
   private
     def event_params
-      params.require(:event).permit(:title, :start_time, :end_time, :body, :user_id, :consumption)
+      params.require(:event).permit(
+        :title, 
+        :start_time, 
+        :end_time, 
+        :body, 
+        :user_id,
+        finances_attributes: [:id, :consumption, :item]
+      )
+    end
+
+    def finance_params
+      params.require(:finance).permit(:consumption, :item, :event_id)
     end
 
     def set_event

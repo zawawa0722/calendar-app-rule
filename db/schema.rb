@@ -26,9 +26,11 @@ ActiveRecord::Schema.define(version: 2021_01_12_145014) do
 
   create_table "finances", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "consumption"
-    t.string "item"
+    t.text "item"
+    t.bigint "event_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["event_id"], name: "index_finances_on_event_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -45,4 +47,5 @@ ActiveRecord::Schema.define(version: 2021_01_12_145014) do
   end
 
   add_foreign_key "events", "users"
+  add_foreign_key "finances", "events"
 end

@@ -4,28 +4,28 @@
       <h3 class="modal__title">スケジュール登録</h3>
     </div>
     <div class="modal__body">
-      <%= form_with model: @event, url: events_path, local: true do |f| %>
+      <%= form_with model: @event, url: events_path, local: true do |e| %>
         <div  class="col">
           <p>
             <span>タイトル</span>
-            <span><%= f.text_field :title, class: "form-control1", placeholder: "予定名を入力してください" %></span>
+            <span><%= e.text_field :title, class: "form-control1", placeholder: "予定名を入力してください" %></span>
           </p>
           <span>開始日時</span>
-          <span><%= f.datetime_field  :start_time, placeholder: "XXXX-XX-XX", class:"field" %> ~ </span><br>
+          <span><%= e.datetime_field  :start_time, placeholder: "XXXX-XX-XX", class:"field" %> ~ </span><br>
           <span>終了日時</span>
-          <span><%= f.datetime_field :end_time, placeholder: "XXXX-XX-XX", class:"field" %></span><br>
+          <span><%= e.datetime_field :end_time, placeholder: "XXXX-XX-XX", class:"field" %></span><br>
           <span>詳細
-          <%= f.text_area :body, class: "form-control2", placeholder: "予定の詳細を入力してください" %></span><br>
+          <%= e.text_area :body, class: "form-control2", placeholder: "予定の詳細を入力してください" %></span><br>
           <span>使用予定金額</span>
-          <%= fields_for :finances do |f| %>
+          <%= fields_for :finance do |f| %>
             <span><%= f.number_field :consumption, class: "field__consumption", placeholder: "使用予定金額を入力してください"%><br>
             <span>金額項目</span>
             <span><%= f.select :item, [["家賃", "家賃"], ["光熱費", "光熱費"], ["食費", "食費"], ["交通費", "交通費"], ["雑費", "雑費"]], include_blank: "選択して下さい", class: "field" %><br>
           <% end %>
         </div>
         <div class="modal__footer">
-          <%= f.submit "登録する", class: "btn-primary" %>
-          <%= f.hidden_field :user_id, :value => current_user.id %>
+          <%= e.submit "登録する", class: "btn-primary" %>
+          <%= e.hidden_field :user_id, :value => current_user.id %>
           <a href="/events">
             <button type="button" class="btn-default" data-dismiss="modal" id="close-modal">閉じる</button>
           </a>
