@@ -24,7 +24,7 @@ class EventsController < ApplicationController
 
     respond_to do |format|
       if @event.save
-         @finance.save
+        @finance.save
         format.html { redirect_to @event, notice: '予定を作成しました' }
         format.json { render :show, status: :created, location: @event  }
       else

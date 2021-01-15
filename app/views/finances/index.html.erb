@@ -6,14 +6,21 @@
 <body>
   <div class="titles">
     <a href="/" class="chart__title">Bar Chart</a>
-    <a href="finances" class="chart-btn">
-      <i class="fas fa-chart-pie"></i>
+  </div>
+  <div class="icons">
+    <a href="/finances/show" class="chart-btn">
+        <i class="fas fa-chart-pie"></i>
+        </a>
+    <a href="events" class="calendar-btn">
+        <i class="far fa-calendar-alt"></i>
     </a>
   </div>
-  <a href="events" class="calendar-btn">
-    <i class="far fa-calendar-alt"></i>
-  </a>
-    <div style="width: 85vw;">
+
+<p id="notice"><%= notice %></p>
+<%= column_chart Finance.group(:item).sum(:consumption), id: "column-chart", width: "85vw", height: "600px", colors: ["#b00", "#666"] %>
+
+
+    <%# <div style="width: 85vw;">
         <canvas id="chart" width="600" height="300"></canvas>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -42,19 +49,33 @@
                     data: [
                         9000,4000,2000,10000,2000,2500,1400,3000,2200,3000,1500,4800
                     ],
-                    backgroundColor: 'deepskyblue',
+                    backgroundColor: '#afeeee',
                 },{
-                    label: '光熱費',
+                    label: '家賃',
                     data: [
                         1000,5000,7800,5500,2600,1200,9000,7000,4000,3700,2200,5600
                     ],
-                    backgroundColor: 'palegreen',
+                    backgroundColor: '#98fb98',
+                },{
+                    label: '光熱費',
+                    data: [
+                        4000,500,1700,5515,3000,4500,3300,1200,2100,3000,4200,3200,1200
+                    ],
+                    backgroundColor: '#ffd700',
+                },{
+                    label: '交通費',
+                    data: [
+                        4000,500,1700,5515,3000,4500,3300,1200,2100,3000,4200,3200,1200
+                    ],
+                    backgroundColor: '#ffa07a',
                 },{
                     label: '雑費',
                     data: [
                         4000,500,1700,5515,3000,4500,3300,1200,2100,3000,4200,3200,1200
                     ],
-                    backgroundColor: 'gold'
+                    backgroundColor: '#ffb6c1',
+                    
+                    
                 }]
             },
             options: {
@@ -77,5 +98,8 @@
             }
         });
     </script>
-</body>
-</html>
+</body> %>
+<%# </html> %>
+
+
+

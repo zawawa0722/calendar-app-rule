@@ -1,0 +1,22 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Rugby World Cup Host Countries</h1><!-- 追記 -->
+
+<%= column_chart RugbyWorldCupHostCountry.pluck(:held_at, :total_attendance),
+                 id: 'total-attendance-chart',
+                 width: '400px',
+                 height: '500px',
+                 colors: ['#b00'] %><!-- 追記 -->
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Total attendance</th>
+      <th>Matches</th>
+      <th>Stadium capacity</th>
+      <th>Held at</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+・・・省略・・・
