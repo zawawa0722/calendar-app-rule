@@ -5,5 +5,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
          
   has_many :events
-  # has_many :finances
+  has_many :finances
 end

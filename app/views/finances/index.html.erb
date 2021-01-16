@@ -17,7 +17,8 @@
   </div>
 
 <p id="notice"><%= notice %></p>
-<%= column_chart Finance.group(:item).sum(:consumption), id: "column-chart", width: "85vw", height: "600px", colors: ["#b00", "#666"] %>
+<%= column_chart Finance.group(:item).sum(:consumption), id: "column-chart", width: "80vw", height: "600px", colors: ["#98fb98", "#666"] %>
+
 
 
     <%# <div style="width: 85vw;">
@@ -99,7 +100,7 @@
         });
     </script>
 </body> %>
-<%# </html> %>
+</html>
 
 
 

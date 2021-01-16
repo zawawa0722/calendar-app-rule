@@ -17,7 +17,7 @@
           <span>詳細
           <%= e.text_area :body, class: "form-control2", placeholder: "予定の詳細を入力してください" %></span><br>
           <span>使用予定金額</span>
-          <%= fields_for :finance do |f| %>
+          <%= e.fields_for :finance, @event.build_finance do |f| %>
             <span><%= f.number_field :consumption, class: "field__consumption", placeholder: "使用予定金額を入力してください"%><br>
             <span>金額項目</span>
             <span><%= f.select :item, [["家賃", "家賃"], ["光熱費", "光熱費"], ["食費", "食費"], ["交通費", "交通費"], ["雑費", "雑費"]], include_blank: "選択して下さい", class: "field" %><br>

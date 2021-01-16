@@ -4,27 +4,26 @@ class EventsController < ApplicationController
   before_action :set_event, only: [:edit, :update, :destroy]
 
   def index
-    @events = Event.all
+    @events = Event.where(user_id: current_user.id)
+
   end
 
   def show
+    @events = Event.where(user_id: current_user.id)
   end
 
   def new
     @event = Event.new
-    # @event.finances.new
     @event.build_finance
   end
 
   
   def create
     @event = Event.new(event_params)
-    @event.build_finance(event_params[:finances_attributes])
-    @finance = Finance.new(finance_params)
+    @event.build_finance(event_params[:finance_attributes])
 
     respond_to do |format|
       if @event.save
-        @finance.save
         format.html { redirect_to @event, notice: '予定を作成しました' }
         format.json { render :show, status: :created, location: @event  }
       else
@@ -61,13 +60,10 @@ class EventsController < ApplicationController
         :start_time, 
         :end_time, 
         :body, 
-        :user_id,
-        finances_attributes: [:id, :consumption, :item]
-      )
-    end
-
-    def finance_params
-      params.require(:finance).permit(:consumption, :item, :event_id)
+        finance_attributes: [:id, :consumption, :item,]
+      ).merge(
+        user_id: current_user.id,
+      )  
     end
 
     def set_event

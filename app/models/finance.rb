@@ -1,5 +1,4 @@
 class Finance < ApplicationRecord
-  # belongs_to :users
+  belongs_to :user, optional: true
   has_one :event
-  # belongs_to :event
 end
