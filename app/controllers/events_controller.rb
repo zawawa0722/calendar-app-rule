@@ -5,7 +5,6 @@ class EventsController < ApplicationController
 
   def index
     @events = Event.where(user_id: current_user.id)
-
   end
 
   def show
@@ -24,13 +23,16 @@ class EventsController < ApplicationController
 
     respond_to do |format|
       if @event.save
-        format.html { redirect_to @event, notice: '予定を作成しました' }
+        format.html { redirect_to action: :index, notice: '予定を作成しました' }
         format.json { render :show, status: :created, location: @event  }
       else
         format.html { render :new }
         format.json { render json: @event.errors, status: :unprocessable_entity }
       end
     end
+
+    @finance = Finance.last(params[:id])
+    @finance.update(user_id: current_user.id)
   end
 
   def update
@@ -59,10 +61,11 @@ class EventsController < ApplicationController
         :title, 
         :start_time, 
         :end_time, 
-        :body, 
-        finance_attributes: [:id, :consumption, :item,]
+        :body,
+        :user_id,
+        finance_attributes: [:id, :consumption, :item, :user_id]
       ).merge(
-        user_id: current_user.id,
+        user_id: current_user.id
       )  
     end
 

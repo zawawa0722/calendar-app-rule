@@ -5,5 +5,6 @@ Rails.application.routes.draw do
   resources :events 
   resources :finances, only:[:index, :show]
   resources :entrances, only:[:index]
-  get "/events/finances/show", to: "finances#index"
+  # get "/events/finances/show", to: "finances#index"
+  # get "/events/finances/events", to: "events#index"
 end

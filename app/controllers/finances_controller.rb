@@ -1,11 +1,11 @@
 class FinancesController < ApplicationController
 
   def index
-    @finance = Finance.where(user_id: current_user.id)
+    @finances = Finance.where(user_id: current_user.id)
   end
 
   def show
-    
+    @finances = Finance.where(user_id: current_user.id)
   end
 
   def new
