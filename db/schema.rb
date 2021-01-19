@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(version: 2021_01_17_042655) do
   create_table "finances", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "consumption"
     t.text "item"
+    t.datetime "start_time"
     t.bigint "event_id"
     t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false

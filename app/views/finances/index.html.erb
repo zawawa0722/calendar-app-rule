@@ -16,12 +16,12 @@
     </a>
   </div>
 
-<p id="notice"><%= notice %></p>
-<%= column_chart @finances.group(:item).sum(:consumption), id: "column-chart", width: "80vw", height: "600px", colors: ["#98fb98", "#666"] %>
+<%# <p id="notice"><%= notice %></p>
+<%# <%= column_chart @finances.group(:item).sum(:consumption), id: "column-chart", width: "80vw", height: "600px", colors: ["#98fb98", "#666"] %>
 
 
 
-    <%# <div style="width: 85vw;">
+    <%# <%# <div style="width: 85vw;"> %>
         <canvas id="chart" width="600" height="300"></canvas>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -46,37 +46,25 @@
                     '12月'
                 ],
                 datasets: [{
-                    label: '食費',
-                    data: [
-                        9000,4000,2000,10000,2000,2500,1400,3000,2200,3000,1500,4800
-                    ],
+                    label: "食事代",
+                    data: <%= @food_date %>,
                     backgroundColor: '#afeeee',
                 },{
-                    label: '家賃',
-                    data: [
-                        1000,5000,7800,5500,2600,1200,9000,7000,4000,3700,2200,5600
-                    ],
+                    label: "購入費",
+                    data: <%= @buy_date %>,
                     backgroundColor: '#98fb98',
                 },{
-                    label: '光熱費',
-                    data: [
-                        4000,500,1700,5515,3000,4500,3300,1200,2100,3000,4200,3200,1200
-                    ],
+                    label: "娯楽費",
+                    data: <%= @amusement_date %>,
                     backgroundColor: '#ffd700',
                 },{
-                    label: '交通費',
-                    data: [
-                        4000,500,1700,5515,3000,4500,3300,1200,2100,3000,4200,3200,1200
-                    ],
+                    label: "交通費",
+                    data: <%= @traveling_date %>,
                     backgroundColor: '#ffa07a',
                 },{
-                    label: '雑費',
-                    data: [
-                        4000,500,1700,5515,3000,4500,3300,1200,2100,3000,4200,3200,1200
-                    ],
+                    label: "雑費",
+                    data: <%= @other_date %>,
                     backgroundColor: '#ffb6c1',
-                    
-                    
                 }]
             },
             options: {
@@ -84,22 +72,32 @@
                     display: true,
                     text: ''
                 },
+                scaleOverride: true,
                 scales: {
+                    xAxes: [{
+                    stacked: true
+                    }],
                     yAxes: [{
                         ticks: {
-                            suggestedMax: 10000,
+                            suggestedMax: 50000,
                             suggestedMin: 0,
-                            stepSize: 1000,
+                            stepSize: 10000,
                             callback: function (value, index, values) {
                                 return value + '円';
                             }
                         },
+                        // type: 'time',
+                        // position: 'bottom',
+                        time: {
+                        unit: 'month',
+                        format: 'timeFormat'
+                        }
                     }]
                 }
             }
         });
     </script>
-</body> %>
+</body>
 </html>
 
 

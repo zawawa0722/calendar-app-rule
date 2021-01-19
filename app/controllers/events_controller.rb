@@ -33,6 +33,8 @@ class EventsController < ApplicationController
 
     @finance = Finance.last(params[:id])
     @finance.update(user_id: current_user.id)
+    @finance.update(start_time: @event.start_time)
+    
   end
 
   def update
@@ -63,7 +65,7 @@ class EventsController < ApplicationController
         :end_time, 
         :body,
         :user_id,
-        finance_attributes: [:id, :consumption, :item, :user_id]
+        finance_attributes: [:id, :consumption, :item, :user_id, :start_time]
       ).merge(
         user_id: current_user.id
       )  

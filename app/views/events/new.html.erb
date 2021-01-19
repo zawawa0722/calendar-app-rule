@@ -20,7 +20,7 @@
           <%= e.fields_for :finance, @event.build_finance do |f| %>
             <span><%= f.number_field :consumption, class: "field__consumption", placeholder: "使用予定金額を入力してください"%><br>
             <span>金額項目</span>
-            <span><%= f.select :item, [["家賃", "家賃"], ["光熱費", "光熱費"], ["食費", "食費"], ["交通費", "交通費"], ["雑費", "雑費"]], include_blank: "選択して下さい", class: "field" %><br>
+            <span><%= f.select :item, [["娯楽費", "娯楽費"], ["購入費", "購入費"], ["食事代", "食事代"], ["交通費", "交通費"], ["雑費", "雑費"]], include_blank: "選択して下さい", class: "field" %><br>
           <% end %>
         </div>
         <div class="modal__footer">
