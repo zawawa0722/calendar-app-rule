@@ -5,55 +5,63 @@
   <title>家計簿</title> 
 </head>
 <body>
-  <div class="title">
-    <h1>今月の支出</h1>
-  </div>
-  <canvas id="myPieChart"></canvas>
-  <!-- CDN -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.js"></script>
+  <div class="sum_wrapper">
+    <div class="title">
+      <h1>今月の支出情報</h1>
+    </div>
+    <div class="sum">
+      <div class="sum_title">支出合計金額</div>
+      <div class="sum_date">
+          <%= @sum_finances %> 円
+      </div>
+    </div>
+    <canvas id="myPieChart"></canvas>
+    <!-- CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.js"></script>
 
-  <script>
-  var ctx = document.getElementById("myPieChart");
-  var myPieChart = new Chart(ctx, {
-    type: 'pie',
-    data: {
-      labels: ["食費", "家賃", "光熱費", "交通費", "雑費"],
-      datasets: [{
-          backgroundColor: [
-              "#afeeee",
-              "#98fb98",
-              "#ffd700",
-              "#ffa07a",
-              "#ffb6c1"
-          ],
-          data: [38, 31, 16, 10, 5]
-      }]
-    },
-    options: {
-      legend: {
-        labels: {
-          fontSize: 20,
-        },
-        position: 'bottom'
+    <script>
+    var ctx = document.getElementById("myPieChart");
+    var myPieChart = new Chart(ctx, {
+      type: 'doughnut',
+      data: {
+        labels: ["食事代", "購入費", "娯楽費", "交通費", "雑費"],
+        datasets: [{
+            backgroundColor: [
+                "#afeeee",
+                "#98fb98",
+                "#ffd700",
+                "#ffa07a",
+                "#ffb6c1"
+            ],
+            data: <%= @total_item %>
+        }]
       },
-      layout: {
-        padding: {
-          bottom: 50,
+      options: {
+        legend: {
+          labels: {
+            fontSize: 20,
+          },
+          position: 'bottom'
         },
-      },
-      title: {
-        display: true,
-        text: ''
+        layout: {
+          padding: {
+            bottom: 150,
+          },
+        },
+        title: {
+          display: true,
+          text: ''
+        }
       }
-    }
-  });
-  </script>
+    });
+    </script>
+  </div>
   <div class="back__contents">
     <a href="/events", class="back__btn">
       <p class="back__message1">カレンダーへ戻る</p>
     </a>
     <a href="/finances", class="chart-go">
-      <p class="chart-go__text">月遷移</p>
+      <p class="chart-go__text">月間表示</p>
     </a>
   </div>
 </body>

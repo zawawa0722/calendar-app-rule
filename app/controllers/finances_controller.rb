@@ -246,7 +246,26 @@ class FinancesController < ApplicationController
 
 
   def show
+
+    # 現在のユーザーのレコードを取得
     @finances = Finance.where(user_id: current_user.id)
+    # 今日を取得
+    @today = Date.today
+    # 予定開始日が今月に所属するレコードを取得
+    @today_date = @finances.where(start_time: @today.in_time_zone.all_month)
+
+    # 各項目の今月の合計消費額
+    @total_food = [@today_date.where(item: "食事代").pluck(:consumption).sum]
+    @total_buy = [@today_date.where(item: "購入費").pluck(:consumption).sum]
+    @total_amusement = [@today_date.where(item: "娯楽費").pluck(:consumption).sum]
+    @total_traveling = [@today_date.where(item: "交通費").pluck(:consumption).sum]
+    @total_other = [@today_date.where(item: "雑費").pluck(:consumption).sum]
+
+    # 配列化
+    @total_item = []
+    @total_item.push(@total_food, @total_buy, @total_amusement, @total_traveling, @total_other)
+
+    @sum_finances = sum_finances
   end
 
   private
@@ -254,6 +273,9 @@ class FinancesController < ApplicationController
     def finance_params
       params.require(:finance).permit(:consumption, :item, :event_id, :user_id)
     end
+      
+
+      
 
     # 月毎の合計金額算出メソッド
     def sum_finances
