@@ -1,5 +1,5 @@
 class Event < ApplicationRecord
-  validates :title, :start_time, :end_time, :body, presence: true
+  validates :title, :start_time, :end_time, presence: true
   belongs_to :user
   has_one :finance
   # has_many :finance, through: :event_finances
