@@ -60,3 +60,4 @@ gem 'jquery-rails'
 gem 'pry-rails'
 gem "chartkick"
 gem 'groupdate'
+gem 'gon'

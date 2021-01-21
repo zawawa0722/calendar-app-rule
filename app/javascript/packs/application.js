@@ -15,7 +15,7 @@ require("../entrances")
 require("../finances")
 require("../modal")
 require("jquery")
-
+require("date")
 // require("chartkick").use(require("highcharts"))
 
 // Uncomment to copy all static images under ../images to the output folder and reference
