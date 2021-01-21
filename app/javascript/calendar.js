@@ -10,9 +10,9 @@ import listPlugin from "@fullcalendar/list";
 import bootstrapPlugin from "@fullcalendar/bootstrap";
 
 document.addEventListener("DOMContentLoaded", function () {
-  var calendarEl = document.getElementById("calendar");
+  let calendarEl = document.getElementById("calendar");
 
-  var calendar = new Calendar(calendarEl, {
+  let calendar = new Calendar(calendarEl, {
     plugins: [
       dayGridPlugin,
       interactionPlugin,
@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", function () {
     height: "100vh",
     editable: true,
     defaultDate: "local",
-    dayMaxEvents: true, // when too many events in a day, show the popover
+    dayMaxEvents: true,
     events: '/events.json',
     
   });

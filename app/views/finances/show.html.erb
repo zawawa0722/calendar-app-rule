@@ -15,13 +15,13 @@
           <%= @sum_finances %> 円
       </div>
     </div>
-    <canvas id="myPieChart"></canvas>
+    <canvas id="myPieChart" width="550" height="250"></canvas>
     <!-- CDN -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.js"></script>
 
     <script>
-    var ctx = document.getElementById("myPieChart");
-    var myPieChart = new Chart(ctx, {
+    let ctx = document.getElementById("myPieChart");
+    let myPieChart = new Chart(ctx, {
       type: 'doughnut',
       data: {
         labels: ["食事代", "購入費", "娯楽費", "交通費", "雑費"],
@@ -45,7 +45,7 @@
         },
         layout: {
           padding: {
-            bottom: 150,
+            bottom: 50,
           },
         },
         title: {
@@ -61,7 +61,7 @@
       <p class="back__message1">カレンダーへ戻る</p>
     </a>
     <a href="/finances", class="chart-go">
-      <p class="chart-go__text">月間表示</p>
+      <p class="chart-go__text">月別表示</p>
     </a>
   </div>
 </body>

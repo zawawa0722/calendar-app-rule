@@ -16,22 +16,19 @@
     </a>
   </div>
   <div class="sum">
-    <div class="sum_title">今月の支出合計金額</div>
-    <div class="sum_date">
-        <%= @sum_finances %> 円
-    </div>
+    <div class="sum_title">月別表示</div>
   </div>
 
 
 
     <%# <%# <div style="width: 85vw;"> %>
-        <canvas id="chart" width="600" height="250"></canvas>
+    <canvas id="chart" width="700" height="250"></canvas>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js" integrity="sha256-R4pqcOYV8lt7snxMQO/HSbVCFRPMdrhAFMH+vr9giYI=" crossorigin="anonymous"></script>
     <script>
-        var ctx = $('#chart');
-        var mychart = new Chart(ctx, {
+        let ctx = $('#chart');
+        let mychart = new Chart(ctx, {
             type: 'bar',
             data: {
                 labels: [
@@ -71,6 +68,11 @@
                 }]
             },
             options: {
+                legend: {
+                    labels: {
+                        fontSize: 20,
+                    },
+                },
                 title: {
                     display: true,
                 },
