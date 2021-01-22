@@ -3,7 +3,7 @@ lock '3.14.1'
 
 # 自身のアプリ名、ユーザー名、リポジトリ名を記述
 set :application, 'calendar-app-rule'
-set :repo_url,  'git@github.com:zawawa0722/calendar-app.git'
+set :repo_url,  'git@github.com:zawawa0722/calendar-app-rule.git'
 
 # githubのデフォルトのブランチがmasterではなくmainになっている場合のみ以下1行のコメントアウトを外して追記してください。 ※1補足
 # set :branch, 'main'

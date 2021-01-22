@@ -1,5 +1,5 @@
 {
-  "name": "calendar_app2",
+  "name": "calendar_app_rule",
   "private": true,
   "dependencies": {
     "@fullcalendar/bootstrap": "^5.3.1",
