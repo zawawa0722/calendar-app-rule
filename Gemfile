@@ -74,3 +74,4 @@ gem 'pry-rails'
 gem "chartkick"
 gem 'groupdate'
 gem 'gon'
+gem 'sprockets-rails'

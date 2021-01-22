@@ -298,6 +298,7 @@ DEPENDENCIES
   selenium-webdriver
   spring
   spring-watcher-listen (~> 2.0.0)
+  sprockets-rails
   tzinfo-data
   unicorn (= 5.4.1)
   web-console (>= 3.3.0)
