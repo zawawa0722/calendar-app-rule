@@ -1,7 +1,7 @@
-$(".Button").tilt({ scale: 1.1, speed: 1000 });
+// $(".btn btn--stripe").tilt({ scale: 1.1, speed: 1000 });
 
 // click event
-$(".Button").on("click", function (e) {
+$(".btn btn--stripe").on("click", function (e) {
   explode(e.pageX, e.pageY);
 });
 

@@ -8,14 +8,14 @@ require("@rails/ujs").start()
 // require("turbolinks").start();
 require("@rails/activestorage").start()
 require("channels")
-require("chartkick")
+// require("chartkick")
 require("chart.js")
 require("../calendar")
 require("../entrances")
-require("../finances")
-require("../modal")
+// require("../finances")
+// require("../modal")
 require("jquery")
-require("date")
+// require("date")
 // require("chartkick").use(require("highcharts"))
 
 // Uncomment to copy all static images under ../images to the output folder and reference
