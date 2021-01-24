@@ -77,3 +77,5 @@ gem "chartkick"
 gem 'groupdate'
 gem 'gon'
 gem 'sprockets-rails'
+gem 'fullcalendar-rails'
+gem 'momentjs-rails'

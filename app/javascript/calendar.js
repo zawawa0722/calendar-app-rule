@@ -8,6 +8,8 @@ import jaLocale from "@fullcalendar/core/locales/ja";
 import timeGridPlugin from "@fullcalendar/timegrid";
 import listPlugin from "@fullcalendar/list";
 import bootstrapPlugin from "@fullcalendar/bootstrap";
+import '@fullcalendar/common/main.css'
+import '@fullcalendar/daygrid/main.css'
 
 document.addEventListener("DOMContentLoaded", function () {
   let calendarEl = document.getElementById("calendar");
