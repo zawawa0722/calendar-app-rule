@@ -14,9 +14,16 @@ test:
   <<: *default
   database: calendar_app_rule_test
 
+# production:
+#   <<: *default
+#   database: calendar_app_rule_production
+#   username: root
+#   password: <%= ENV['DATABASE_PASSWORD'] %>
+#   socket: /var/lib/mysql/mysql.sock
+
 production:
+  #半角スペース２個分の空白を開ける
   <<: *default
-  database: calendar_app_rule_production
-  username: root
-  password: <%= ENV['DATABASE_PASSWORD'] %>
-  socket: /var/lib/mysql/mysql.sock
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
