@@ -1,0 +1,29 @@
+default: &default
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  adapter: mysql2
+  username: root
+  password:
+  encoding: utf8
+  socket: /tmp/mysql.sock
+
+development:
+  <<: *default
+  database: calendar_app_rule_development
+
+test:
+  <<: *default
+  database: calendar_app_rule_test
+
+# production:
+#   <<: *default
+#   database: calendar_app_rule_production
+#   username: root
+#   password: <%= ENV['DATABASE_PASSWORD'] %>
+#   socket: /var/lib/mysql/mysql.sock
+
+production:
+  #半角スペース２個分の空白を開ける
+  <<: *default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5

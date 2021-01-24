@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CalendarApp</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <%= stylesheet_link_tag 'application', media: 'all' %>
+    <%= javascript_pack_tag 'application' %>
+  </head>
+
+  <body>
+    <header class="header">
+      <% if user_signed_in? %>
+        <div class="user_nav grid">
+          <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "link-out" %>
+        </div>
+      <% else %>
+        <div class="grid">
+          <%= link_to "新規登録", new_user_registration_path, class: "link" %>
+        </div>      
+      <% end %>
+    </header>
+    <%= yield %>
+  </body>
+</html>
