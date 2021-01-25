@@ -83,7 +83,7 @@ body {
   }
 }
 
-// 以下ボタンscss
+// 以下ボタンスタイル
 
 $color-gray: #666;
 $color-black: #000;
@@ -149,8 +149,6 @@ $border-color-hover: $color-black;
   border-radius: 6px;
   margin-bottom: 16px;
   transition: all 0.5s ease;
-  // margin-top: 150px;
-  // margin-left: 200px;
   &__parent {
     display: flex;
   }
@@ -211,9 +209,6 @@ $border-color-hover: $color-black;
   text-decoration: none;
   color: hotpink;
   position: relative;
-  // position: absolute;
-  // top: 120px;
-  // left: 50px;
   &-out {
     float: right;
     text-decoration: none;
@@ -230,11 +225,11 @@ $border-color-hover: $color-black;
   box-sizing: border-box;
 }
 
-/* モーダルCSS */
+/* モーダルスタイル */
 .modalArea {
   display: none;
   position: fixed;
-  z-index: 10; /*サイトによってここの数値は調整 */
+  z-index: 10; 
   top: 0;
   left: 0;
   width: 100%;
@@ -267,7 +262,7 @@ $border-color-hover: $color-black;
   cursor: pointer;
 }
 
-/* 以下ボタンスタイル */
+/* 以下モーダルボタンスタイル */
 button {
   background-color: #fff;
   border: 1px solid #282828;
@@ -300,6 +295,8 @@ button {
 .modalp {
   font-size: 20px;
 }
+
+// 以下openボタンスタイル
 
 $font: "Source Sans Pro", sans-serif;
 $primary: #b15947;
@@ -336,7 +333,6 @@ body {
 }
 
 .flex {
-  // min-height: 100vh;
   margin-top: 20%;
   display: flex;
   align-items: center;
