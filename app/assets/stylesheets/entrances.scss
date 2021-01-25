@@ -229,7 +229,7 @@ $border-color-hover: $color-black;
 .modalArea {
   display: none;
   position: fixed;
-  z-index: 10; 
+  z-index: 10;
   top: 0;
   left: 0;
   width: 100%;
@@ -376,6 +376,9 @@ body {
     &:after {
       -webkit-transform: rotate(45deg);
       transform: rotate(45deg);
+      background-color: $primary;
+      content: "open";
+      color: white;
     }
   }
   &:active {
