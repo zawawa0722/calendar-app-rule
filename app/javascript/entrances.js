@@ -68,3 +68,13 @@ function explode(x, y) {
 function rand(min, max) {
   return Math.floor(Math.random() * (max + 1)) + min;
 }
+
+$(function () {
+  $('#openModal').click(function(){
+    $('#modalArea').fadeIn();
+  });
+  $('#closeModal , #modalBg').click(function(){
+    $('#modalArea').fadeOut();
+  });
+
+});

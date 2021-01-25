@@ -1,0 +1,64 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+.sign-up {
+  height: 70vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &__text {
+    height: 20px;
+    width: 200px;
+  }
+  &__btn {
+    width: 80px;
+    height: 30px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    &:hover {
+      background-color: gray;
+      color: whitesmoke;
+    }
+  }
+}
+
+.container {
+  height: 47vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  // margin: 20px;
+  padding: 10px;
+  background-color: whitesmoke;
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+  margin: 10px;
+}
+
+.login-text {
+  margin-bottom: 15px;
+}
+
+.login-wrapper {
+  height: 100vh;
+  width: 100vw;
+  background-color: black;
+}
+
+#openModal {
+  color: white;
+  background-color: black;
+  border-style: none;
+  font-size: 30px;
+  &:hover {
+    color: black;
+  }
+}

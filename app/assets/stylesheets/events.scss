@@ -132,28 +132,28 @@ body {
 }
 
 // 以下モーダルscss
-.modal {
-  position: relative;
-  background-color: gray;
-  &__content {
-    height: 500px;
-    width: 500px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translateY(15%) translateX(-50%);
-  }
-  &__title {
-    font-size: 25px;
-  }
-  &__footer {
-    float: right;
-  }
-}
+// .modal {
+//   position: relative;
+//   background-color: gray;
+//   &__content {
+//     height: 500px;
+//     width: 500px;
+//     display: flex;
+//     flex-direction: column;
+//     align-items: center;
+//     justify-content: center;
+//     position: absolute;
+//     top: 50%;
+//     left: 50%;
+//     transform: translateY(15%) translateX(-50%);
+//   }
+//   &__title {
+//     font-size: 25px;
+//   }
+//   &__footer {
+//     float: right;
+//   }
+// }
 .form-control1 {
   width: 90%;
   height: 30px;

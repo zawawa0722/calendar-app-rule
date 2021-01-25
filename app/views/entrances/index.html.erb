@@ -5,13 +5,19 @@
       <span class="main-heading-secondary">Calendar App!</span>
     </h1>
     <%  if user_signed_in? %>
-      <%= link_to events_path, class:"link" do %>
-        <button class="btn btn--stripe">click!</button>
-      <% end %>
+      <div class="flex">
+        <a href="/events" class="bttn">open</a>
+      </div>
     <% else %>
-      <%= link_to new_user_session_path, class:"link" do %>
-        <button class="btn btn--stripe">ログイン</button>
-      <% end %>
+      <div class="modal-btn">
+        <%= link_to new_user_session_path, class:"link" do %> 
+          <button class="btn btn--stripe">ログイン</button>
+        <% end %> 
+        <p class="modalp">or</p>
+        <%= link_to new_user_registration_path, class:"link" do %> 
+          <button class="btn btn--stripe">新規登録</button>
+        <% end %> 
+      </div>
     <% end %>
   </div>
 </div>

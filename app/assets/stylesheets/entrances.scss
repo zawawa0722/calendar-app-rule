@@ -10,6 +10,8 @@ body {
 .wrapper {
   height: 100vh;
   width: 100vw;
+  position: relative;
+  z-index: 1;
 }
 
 .o {
@@ -134,7 +136,10 @@ $border-color-hover: $color-black;
 }
 .btn {
   @include reset-button;
-  display: block;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   text-decoration: none;
   text-transform: uppercase;
   padding: 16px 36px 22px;
@@ -144,8 +149,8 @@ $border-color-hover: $color-black;
   border-radius: 6px;
   margin-bottom: 16px;
   transition: all 0.5s ease;
-  margin-top: 150px;
-  margin-left: 200px;
+  // margin-top: 150px;
+  // margin-left: 200px;
   &__parent {
     display: flex;
   }
@@ -204,10 +209,193 @@ $border-color-hover: $color-black;
 
 .link {
   text-decoration: none;
+  color: hotpink;
+  position: relative;
+  // position: absolute;
+  // top: 120px;
+  // left: 50px;
   &-out {
     float: right;
     text-decoration: none;
     margin: 15px;
     color: gray;
+  }
+}
+
+.grid {
+  margin: 20px;
+}
+
+* {
+  box-sizing: border-box;
+}
+// body {
+//   font-family: "Avenir", "Helvetica, Neue", "Helvetica", "Arial";
+// }
+
+/* モーダルCSS */
+.modalArea {
+  display: none;
+  position: fixed;
+  z-index: 10; /*サイトによってここの数値は調整 */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.modalBg {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(30, 30, 30, 0.8);
+}
+
+.modalWrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70%;
+  max-width: 500px;
+  padding: 10px 30px;
+  background-color: whitesmoke;
+  height: 50%;
+  overflow: auto;
+}
+
+.closeModal {
+  position: absolute;
+  top: 0.5rem;
+  right: 1rem;
+  cursor: pointer;
+}
+
+/* 以下ボタンスタイル */
+button {
+  // padding: 10px;
+  background-color: #fff;
+  border: 1px solid #282828;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+#openModal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.modal-btn {
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-top: 50px;
+  margin-right: 20px;
+  position: relative;
+}
+
+.btn--stripe {
+  height: 70px;
+  width: 140px;
+}
+
+.modalp {
+  font-size: 20px;
+}
+
+@import "https://fonts.googleapis.com/css?family=Source+Sans+Pro:700";
+
+$font: "Source Sans Pro", sans-serif;
+$primary: #b15947;
+$secondary: #f1481b;
+$animation: 0.3s all ease;
+
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+a {
+  color: #333;
+  text-decoration: none;
+  transition: $animation;
+  &:hover {
+    color: $primary;
+  }
+  &:focus {
+    text-decoration: none;
+  }
+  &:active {
+    color: #fff;
+  }
+}
+
+body {
+  font-family: $font;
+  background: #f4f5ee;
+  -webkit-font-smoothing: antialiased;
+}
+
+.flex {
+  // min-height: 100vh;
+  margin-top: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bttn {
+  width: 100px;
+  height: 100px;
+  line-height: 100px;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: bold;
+  position: relative;
+  &:after {
+    transition: $animation;
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    border-radius: 3px;
+    border: 3px solid $primary;
+  }
+  &:before {
+    content: "";
+    position: absolute;
+    border-radius: 3px;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    background: #fff;
+    z-index: -1;
+  }
+  &:hover {
+    &:after {
+      -webkit-transform: rotate(45deg);
+      transform: rotate(45deg);
+    }
+  }
+  &:active {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+    &:before {
+      background-color: $secondary;
+    }
+    &:after {
+      border-color: $secondary;
+    }
   }
 }
