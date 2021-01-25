@@ -229,9 +229,6 @@ $border-color-hover: $color-black;
 * {
   box-sizing: border-box;
 }
-// body {
-//   font-family: "Avenir", "Helvetica, Neue", "Helvetica", "Arial";
-// }
 
 /* モーダルCSS */
 .modalArea {
@@ -272,7 +269,6 @@ $border-color-hover: $color-black;
 
 /* 以下ボタンスタイル */
 button {
-  // padding: 10px;
   background-color: #fff;
   border: 1px solid #282828;
   border-radius: 2px;
@@ -304,8 +300,6 @@ button {
 .modalp {
   font-size: 20px;
 }
-
-// @import "https://fonts.googleapis.com/css?family=Source+Sans+Pro:700";
 
 $font: "Source Sans Pro", sans-serif;
 $primary: #b15947;

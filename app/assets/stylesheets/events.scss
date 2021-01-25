@@ -132,36 +132,43 @@ body {
 }
 
 // 以下モーダルscss
-// .modal {
-//   position: relative;
-//   background-color: gray;
-//   &__content {
-//     height: 500px;
-//     width: 500px;
-//     display: flex;
-//     flex-direction: column;
-//     align-items: center;
-//     justify-content: center;
-//     position: absolute;
-//     top: 50%;
-//     left: 50%;
-//     transform: translateY(15%) translateX(-50%);
-//   }
-//   &__title {
-//     font-size: 25px;
-//   }
-//   &__footer {
-//     float: right;
-//   }
-// }
+.input {
+  position: relative;
+  background-color: gray;
+  &__content {
+    height: 500px;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateY(15%) translateX(-50%);
+  }
+  &__body {
+  }
+  &__title {
+    font-size: 25px;
+  }
+  &__time {
+    width: 65%;
+    margin-top: 5px;
+  }
+  &__footer {
+    display: flex;
+    justify-content: space-around;
+  }
+}
 .form-control1 {
-  width: 90%;
+  width: 100%;
   height: 30px;
   border-radius: 5px;
   padding: 5px;
 }
 .form-control2 {
-  width: 90%;
+  width: 100%;
   height: 80px;
   border-radius: 5px;
   padding: 5px;
@@ -182,6 +189,8 @@ body {
   width: 80px;
   border-style: none;
   cursor: pointer;
+  margin: 10px;
+  border-radius: 5px;
 }
 
 .add {
@@ -201,5 +210,5 @@ body {
 }
 
 .field__consumption {
-  height: 20px;
+  height: 30px;
 }
