@@ -41,8 +41,6 @@ chart.js使用。
 chart.js使用
 配列の情報を取得し、その数値をグラフ表示することによって年間の支出額を表示しています。
 
-## 使用技術（開発環境）
-
 ## フロントエンド
 HTML,Sass,javascripst,jquery,ajax
 
