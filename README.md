@@ -20,3 +20,41 @@ calendar-app-rule
 - マップ機能
 - メモ機能
 - 予定の編集・削除機能
+
+## カレンダー画面
+
+[![Image from Gyazo](https://i.gyazo.com/f9d7a83b69856baa32372deff94693c9.gif)](https://gyazo.com/f9d7a83b69856baa32372deff94693c9)
+
+jqueryのプラグイン"fullcalendar"を使って実装しています。
+
+## 今月の支出情報
+
+[![Image from Gyazo](https://i.gyazo.com/5305d85144ad8529b7e2d73ce52c3861.gif)](https://gyazo.com/5305d85144ad8529b7e2d73ce52c3861)
+chart.js
+
+chart.js使用。
+今月の使用合計金額とそのグラフを実装しました。
+
+## 年間の支出額の表示
+
+[![Image from Gyazo](https://i.gyazo.com/99a6d7f815dc148787570afe46e53b7d.gif)](https://gyazo.com/99a6d7f815dc148787570afe46e53b7d)
+
+chart.js使用
+配列の情報を取得し、その数値をグラフ表示することによって年間の支出額を表示しています。
+
+## 使用技術（開発環境）
+
+フロントエンド
+HTML,Sass,javascripst,jquery,ajax
+
+バックエンド
+Ruby,Ruby on Rails
+
+DB
+PostgreSQL
+
+エディタ
+VScode
+
+ソース管理
+Github
