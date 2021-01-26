@@ -9,7 +9,7 @@ document.addEventListener("touchstart", function () {}, true);
 
 // symbols
 function explode(x, y) {
-  var symbolArray = [
+  let symbolArray = [
     "#donut",
     "#circle",
     "#tri_hollow",
@@ -18,13 +18,13 @@ function explode(x, y) {
     "#squ_hollow",
   ];
 
-  var particles = 10,
+  let particles = 10,
     explosion = $(".Button-wrapper");
 
-  for (var i = 0; i < particles; i++) {
-    var randomSymbol = Math.floor(Math.random() * symbolArray.length);
+  for (let i = 0; i < particles; i++) {
+    let randomSymbol = Math.floor(Math.random() * symbolArray.length);
     // positioning x,y of the particles
-    var x =
+    let x =
         explosion.width() / 2 +
         rand(80, 150) *
           Math.cos((2 * Math.PI * i) / rand(particles - 10, particles + 10)),
