@@ -30,7 +30,6 @@ jqueryのプラグイン"fullcalendar"を使って実装しています。
 ## 今月の支出情報
 
 [![Image from Gyazo](https://i.gyazo.com/5305d85144ad8529b7e2d73ce52c3861.gif)](https://gyazo.com/5305d85144ad8529b7e2d73ce52c3861)
-chart.js
 
 chart.js使用。
 今月の使用合計金額とそのグラフを実装しました。
