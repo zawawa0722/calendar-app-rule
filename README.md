@@ -43,17 +43,17 @@ chart.js使用
 
 ## 使用技術（開発環境）
 
-フロントエンド
+## フロントエンド
 HTML,Sass,javascripst,jquery,ajax
 
-バックエンド
+## バックエンド
 Ruby,Ruby on Rails
 
-DB
+## DB
 PostgreSQL
 
-エディタ
+## エディタ
 VScode
 
-ソース管理
+## ソース管理
 Github
