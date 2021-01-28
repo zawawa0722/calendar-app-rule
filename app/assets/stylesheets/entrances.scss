@@ -206,20 +206,12 @@ $border-color-hover: $color-black;
 }
 
 .link {
-  text-decoration: none;
-  color: hotpink;
-  position: relative;
   &-out {
     float: right;
     text-decoration: none;
     margin: 15px;
     color: gray;
   }
-}
-
-.grid {
-  // padding-top: 20px;
-  z-index: 10;
 }
 
 * {
