@@ -15,6 +15,13 @@ calendar-app-rule
 
 [![Image from Gyazo](https://i.gyazo.com/180732dd7e417479f4548e6a822ab61c.gif)](https://gyazo.com/180732dd7e417479f4548e6a822ab61c)
 
+## 本番環境
+https://calendar-app-rule.herokuapp.com/
+
+ログイン情報（テスト用）
+- メールアドレス: test@gmail.com
+- パスワード: test123
+
 ## 実装予定の内容
 
 - マップ機能
