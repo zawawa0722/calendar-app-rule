@@ -1,0 +1,22 @@
+<div class="show">
+  <div class="show_contents">
+    <div class="show_title">
+      タイトル: <%= @event.title %>
+    </div>
+    <div class="show_start-time">
+      開始日時: <%= @event.start_time.strftime('%Y年 %m月 %d日 %H時 %M分') %>
+    </div>
+    <div class="show_end-time">
+      終了日時: <%= @event.end_time.strftime('%Y年 %m月 %d日 %H時 %M分') %>
+    </div>
+    <div class="show_body">
+      詳細: <%= @event.body %>
+    </div>
+    <div class="show_item">
+      金額項目: <%= @item %>
+    </div>
+    <div class="show_consumption">
+      金額: <%= @consumption %>
+    </div>
+  </div>
+</div>

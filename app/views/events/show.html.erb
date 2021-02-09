@@ -1,4 +1,4 @@
-<div class="contents">
+<div class="contents_update">
   <header class="header">
     <div class="header__bar">
       <a href="/" class="header__logo">Calendar-App</a>
@@ -8,19 +8,11 @@
     </a>
   </header>
   <div id='calendar'></div>
-  <div class="btn1">
-    <a href="finances/show", class="finances-btn">
-      <button class="button">
-        <i class="fas fa-chart-pie"></i>
-        今月の支出
-        <div class="button__horizontal"></div>
-        <div class="button__vertical"></div>
-      </button>
-    </a>
-  </div>
   <footer>
     <p class=footer__logo>
       Copyright Calendar-App 2020.
     </p>
   </footer>
 </div>
+<%= render partial: "show" %>
+

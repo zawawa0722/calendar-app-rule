@@ -10,6 +10,7 @@ import listPlugin from "@fullcalendar/list";
 import bootstrapPlugin from "@fullcalendar/bootstrap";
 import '@fullcalendar/common/main.css'
 import '@fullcalendar/daygrid/main.css'
+// import { createPopper } from '@popperjs/core';
 
 document.addEventListener("DOMContentLoaded", function () {
   let calendarEl = document.getElementById("calendar");
@@ -28,6 +29,9 @@ document.addEventListener("DOMContentLoaded", function () {
       center: "title",
       right: "dayGridMonth,timeGridWeek,timeGridDay listMonth",
     },
+    dateClick: function(info) {
+      alert('Clicked on:' + info.date);
+    },
     navLinks: true,
     selectable: true,
     dateClick: function (info) {
@@ -44,7 +48,7 @@ document.addEventListener("DOMContentLoaded", function () {
     defaultDate: "local",
     dayMaxEvents: true,
     events: '/events.json',
-    
+    eventDisplay: 'block'
   });
   calendar.render();
 });

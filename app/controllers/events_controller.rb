@@ -1,7 +1,7 @@
 class EventsController < ApplicationController
 
   before_action :move_to_index, except: [:index, :new, :create]
-  before_action :set_event, only: [:edit, :update, :destroy]
+  before_action :set_event, only: [:edit, :destroy, :show, :update]
 
   def index
     @events = Event.where(user_id: current_user.id)
@@ -9,6 +9,11 @@ class EventsController < ApplicationController
 
   def show
     @events = Event.where(user_id: current_user.id)
+    @finance = Finance.where(event_id: @event.id)
+    @i = @finance.pluck("item")
+    @item = @i[0]
+    @c = @finance.pluck("consumption")
+    @consumption = @c[0]
   end
 
   def new
@@ -32,6 +37,7 @@ class EventsController < ApplicationController
     end
 
     @finance = Finance.last(params[:id])
+    # @finance.update(event_id: @event.id)
     @finance.update(user_id: current_user.id)
     @finance.update(start_time: @event.start_time)
     
