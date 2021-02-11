@@ -1,22 +1,29 @@
 <div class="show">
-  <div class="show_contents">
-    <div class="show_title">
-      タイトル: <%= @event.title %>
+  <div class="show__contents">
+    <p class="show__title1">予定の詳細</p>
+    <div class="show__title2">
+      タイトル: 　<%= @event.title %>
     </div>
-    <div class="show_start-time">
-      開始日時: <%= @event.start_time.strftime('%Y年 %m月 %d日 %H時 %M分') %>
+    <div class="show__start-time">
+      開始日時: 　<%= @event.start_time.strftime('%Y年 %m月 %d日 %H時 %M分') %>
     </div>
-    <div class="show_end-time">
-      終了日時: <%= @event.end_time.strftime('%Y年 %m月 %d日 %H時 %M分') %>
+    <div class="show__end-time">
+      終了日時: 　<%= @event.end_time.strftime('%Y年 %m月 %d日 %H時 %M分') %>
     </div>
-    <div class="show_body">
-      詳細: <%= @event.body %>
+    <div class="show__body">
+      　　詳細: 　<%= @event.body %>
     </div>
-    <div class="show_item">
-      金額項目: <%= @item %>
+    <div class="show__item">
+      金額項目: 　<%= @item %>
     </div>
-    <div class="show_consumption">
-      金額: <%= @consumption %>
+    <div class="show__consumption">
+      　　金額: 　<%= @consumption %> 円
+    </div>
+    <div class="show__buttones">
+      <%= link_to '変更する', edit_event_path(@event.id), method: :get, class: "show__button" %>
+      <a href="/events">
+        <button type="button" class="btn-default">閉じる</button>
+      </a>
     </div>
   </div>
 </div>

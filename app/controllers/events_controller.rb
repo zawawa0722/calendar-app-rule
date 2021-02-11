@@ -37,13 +37,16 @@ class EventsController < ApplicationController
     end
 
     @finance = Finance.last(params[:id])
-    # @finance.update(event_id: @event.id)
     @finance.update(user_id: current_user.id)
     @finance.update(start_time: @event.start_time)
     
   end
 
+  def edit
+  end
+
   def update
+    @finance = Finance.where(event_id: @event.id)
     respond_to do |format|
       if @event.update(event_params)
         format.html { redirect_to @event, notice: '予定を変更しました' }
@@ -53,6 +56,10 @@ class EventsController < ApplicationController
         format.json { render json: @event.errors, status: :unprocessable_entity }
       end
     end
+
+    @finance.update(user_id: current_user.id)
+    @finance.update(start_time: @event.start_time)
+    Finance.where(event_id: nil).destroy_all
   end
 
   def destroy
@@ -76,6 +83,7 @@ class EventsController < ApplicationController
         user_id: current_user.id
       )  
     end
+    
 
     def set_event
       @event = Event.find(params[:id])

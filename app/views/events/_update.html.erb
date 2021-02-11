@@ -2,10 +2,10 @@
   <div class="update_content">
     <div class="input__content">
       <div class="input__header">
-        <h3 class="input__title">スケジュール登録</h3>
+        <h3 class="input__title">内容変更</h3>
       </div>
       <div class="input__body">
-        <%= form_with model: @event, url: events_path, local: true do |e| %>
+        <%= form_with model: @event, local: true do |e| %>
           <div  class="col">
             <p>
               <span>タイトル</span>
@@ -17,7 +17,7 @@
             <span><%= e.datetime_field :end_time, placeholder: "XXXX-XX-XX", class:"input__time" %></span><br>
             <span>予定詳細
             <%= e.text_area :body, class: "form-control2", placeholder: "予定の詳細を入力してください" %></span><br>
-            <span>使用予定金額</span>
+            <span>使用金額</span>
             <%= e.fields_for :finance, @event.build_finance do |f| %>
               <span><%= f.number_field :consumption, class: "field__consumption", placeholder: "使用予定金額を入力してください"%><br>
               <span>金額項目</span>
@@ -25,7 +25,7 @@
             <% end %>
           </div>
           <div class="input__footer">
-            <%= e.submit "変更する", class: "btn-primary" %>
+            <%= e.submit "更新する", class: "btn-primary" %>
             <%= e.hidden_field :user_id, :value => current_user.id %>
             <a href="/events">
               <button type="button" class="btn-default">閉じる</button>

@@ -359,3 +359,66 @@ body {
   top: -50%;
   display: flex;
 }
+
+@mixin detail {
+  font-size: 20px;
+  padding: 5px;
+}
+
+// 以下予定表示スタイル
+.show {
+  height: 100%;
+  width: auto;
+  display: flex;
+  justify-content: center;
+  &__contents {
+    margin: 20px;
+    padding: 20px;
+    position: absolute;
+    top: 150px;
+    background-color: lightgray;
+    border-radius: 10px;
+    z-index: 10;
+  }
+  &__title1 {
+    font-size: 25px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+    padding: 10px;
+  }
+  &__title2 {
+    @include detail;
+  }
+  &__start-time {
+    @include detail;
+  }
+  &__end-time {
+    @include detail;
+  }
+  &__body {
+    @include detail;
+  }
+  &__item {
+    @include detail;
+  }
+  &__consumption {
+    @include detail;
+  }
+  &__button {
+    height: 40px;
+    width: 90px;
+    background-color: lightgreen;
+    border-radius: 5px;
+    cursor: pointer;
+    border-style: none;
+    margin: 10px;
+    text-align: center;
+    padding-top: 8px;
+  }
+  &__buttones {
+    display: flex;
+    justify-content: space-around;
+  }
+}
