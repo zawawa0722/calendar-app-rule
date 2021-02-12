@@ -26,6 +26,22 @@ body {
   }
 }
 
+@mixin show-btn {
+  height: 40px;
+  width: 90px;
+  border-radius: 5px;
+  cursor: pointer;
+  border-style: none;
+  margin: 10px;
+  text-align: center;
+  padding-top: 8px;
+}
+
+@mixin detail {
+  font-size: 20px;
+  padding: 5px;
+}
+
 .footer {
   &__logo {
     display: flex;
@@ -360,17 +376,23 @@ body {
   display: flex;
 }
 
-@mixin detail {
-  font-size: 20px;
-  padding: 5px;
+.update-btn {
+  @include show-btn;
+  background-color: lightskyblue;
+  padding-bottom: 8px;
 }
 
 // 以下予定表示スタイル
+
 .show {
   height: 100%;
   width: auto;
   display: flex;
   justify-content: center;
+  &__close {
+    float: right;
+    display: block;
+  }
   &__contents {
     margin: 20px;
     padding: 20px;
@@ -407,15 +429,14 @@ body {
     @include detail;
   }
   &__button {
-    height: 40px;
-    width: 90px;
-    background-color: lightgreen;
-    border-radius: 5px;
-    cursor: pointer;
-    border-style: none;
-    margin: 10px;
-    text-align: center;
-    padding-top: 8px;
+    &__change {
+      @include show-btn;
+      background: lightgreen;
+    }
+    &__delete {
+      @include show-btn;
+      background-color: lightpink;
+    }
   }
   &__buttones {
     display: flex;

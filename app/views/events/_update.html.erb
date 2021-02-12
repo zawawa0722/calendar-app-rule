@@ -25,11 +25,8 @@
             <% end %>
           </div>
           <div class="input__footer">
-            <%= e.submit "更新する", class: "btn-primary" %>
+            <%= e.submit "更新する", class: "update-btn" %>
             <%= e.hidden_field :user_id, :value => current_user.id %>
-            <a href="/events">
-              <button type="button" class="btn-default">閉じる</button>
-            </a>
           </div>
         <% end %>
       </div>

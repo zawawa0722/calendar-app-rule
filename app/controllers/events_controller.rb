@@ -59,7 +59,10 @@ class EventsController < ApplicationController
 
     @finance.update(user_id: current_user.id)
     @finance.update(start_time: @event.start_time)
+    # @delete = Finance.find_by(event_id: @event.id).destroy
     Finance.where(event_id: nil).destroy_all
+    Finance.where(item: nil).destroy_all
+    Finance.where(consumption: nil).destroy_all
   end
 
   def destroy
