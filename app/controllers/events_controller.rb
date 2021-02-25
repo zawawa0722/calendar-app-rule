@@ -39,7 +39,7 @@ class EventsController < ApplicationController
     @finance = Finance.last(params[:id])
     @finance.update(user_id: current_user.id)
     @finance.update(start_time: @event.start_time)
-    
+    @event.update(finance_id: @event.id)
   end
 
   def edit
@@ -59,17 +59,16 @@ class EventsController < ApplicationController
 
     @finance.update(user_id: current_user.id)
     @finance.update(start_time: @event.start_time)
-    # @delete = Finance.find_by(event_id: @event.id).destroy
-    Finance.where(event_id: nil).destroy_all
-    Finance.where(item: nil).destroy_all
-    Finance.where(consumption: nil).destroy_all
   end
 
   def destroy
-    @event.destroy
+    if @event.destroy
     respond_to do |format|
       format.html { redirect_to events_url, notice: '予定を削除しました' }
       format.json { head :no_content }
+    end
+    else
+      redirect_to action: :show
     end
   end
 

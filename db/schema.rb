@@ -10,16 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_17_042655) do
-
-  create_table "event_finances", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "event_id"
-    t.bigint "finance_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["event_id"], name: "index_event_finances_on_event_id"
-    t.index ["finance_id"], name: "index_event_finances_on_finance_id"
-  end
+ActiveRecord::Schema.define(version: 2021_01_12_145014) do
 
   create_table "events", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "title", null: false
@@ -28,9 +19,9 @@ ActiveRecord::Schema.define(version: 2021_01_17_042655) do
     t.boolean "alltime"
     t.text "body", null: false
     t.bigint "user_id"
+    t.bigint "finance_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["user_id"], name: "index_events_on_user_id"
   end
 
   create_table "finances", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -58,9 +49,6 @@ ActiveRecord::Schema.define(version: 2021_01_17_042655) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "event_finances", "events"
-  add_foreign_key "event_finances", "finances"
-  add_foreign_key "events", "users"
   add_foreign_key "finances", "events"
   add_foreign_key "finances", "users"
 end
