@@ -29,9 +29,6 @@ document.addEventListener("DOMContentLoaded", function () {
       center: "title",
       right: "dayGridMonth,timeGridWeek,timeGridDay listMonth",
     },
-    dateClick: function(info) {
-      alert('Clicked on:' + info.date);
-    },
     navLinks: true,
     selectable: true,
     dateClick: function (info) {

@@ -80,6 +80,7 @@ class EventsController < ApplicationController
         :end_time, 
         :body,
         :user_id,
+        :all_time,
         finance_attributes: [:id, :consumption, :item, :user_id, :start_time]
       ).merge(
         user_id: current_user.id

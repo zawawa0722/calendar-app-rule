@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 2021_01_12_145014) do
     t.string "title", null: false
     t.datetime "start_time", null: false
     t.datetime "end_time", null: false
-    t.boolean "alltime"
+    t.boolean "all_time"
     t.text "body", null: false
     t.bigint "user_id"
     t.bigint "finance_id"
