@@ -1,4 +1,3 @@
-// $(".btn btn--stripe").tilt({ scale: 1.1, speed: 1000 });
 
 // click event
 $(".btn btn--stripe").on("click", function (e) {
