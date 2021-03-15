@@ -72,6 +72,9 @@ class EventsController < ApplicationController
     end
   end
 
+  def search
+  end
+
   private
     def event_params
       params.require(:event).permit(
