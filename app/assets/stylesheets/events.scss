@@ -453,4 +453,33 @@ body {
   border-radius: 5px;
   background-color: burlywood;
   border-style: none;
+  &__form {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+  &__input  {
+    text-align: center;
+    height: 30px;
+    width: 250px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+  &__btn  {
+    margin-top: 10px;
+    height: 40px;
+    width: 80px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+}
+
+.contents-search  {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-right: 100px;
+  margin-top: 40px;
 }

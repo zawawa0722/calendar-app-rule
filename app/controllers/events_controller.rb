@@ -74,6 +74,7 @@ class EventsController < ApplicationController
 
   def search
     @events = Event.search(params[:keyword])
+    @year = Event.group(:start_time).pluck(:start_time).sort
   end
 
   private

@@ -1,9 +1,25 @@
-<%= form_with(local: true, method: :get, class: "search-form") do |form| %>
-  <%= form.text_field :keyword, placeholder: "予定を検索する", class: "search-input" %>
-  <%= form.submit "検索", class: "search-btn" %>
+<div class="header__bar">
+  <a href="/" class="header__logo">Calendar-App</a>
+</div>
+
+<%= form_with(local: true, method: :get, class: "search__form") do |form| %>
+  <%= form.text_field :keyword, placeholder: "キーワードを入力してください", class: "search__input" %>
+  <%= form.select :start_time, @year, class: "search__year" %>
+  <%= form.submit "検索", class: "search__btn" %>
 <% end %>
-<div class="contents row">
+<div class="contents-search">
   <% @events.each do |event| %>
-    <%= event.title %>
+    <div class="show__title2">
+      タイトル: 　<%= event.title %>
+    </div>
+    <div class="show__start-time">
+      開始日時: 　<%= event.start_time.strftime('%Y年 %m月 %d日 %H時 %M分') %>
+    </div>
+    <div class="show__end-time">
+      終了日時: 　<%= event.end_time.strftime('%Y年 %m月 %d日 %H時 %M分') %>
+    </div>
+    <div class="show__body">
+      　　詳細: 　<%= event.body %>
+    </div>
   <% end %>
 </div>
