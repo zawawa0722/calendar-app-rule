@@ -228,9 +228,6 @@ class FinancesController < ApplicationController
       @other_total.push(@o.pluck(:consumption).sum)
     end
 
-
-
-
     # 各項目最終値［配列］
     @summonth_fooddate = @food_total
     @summonth_buydate = @buy_total

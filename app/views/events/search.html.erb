@@ -8,6 +8,7 @@
   <%= form.submit "検索", class: "search__btn" %>
 <% end %>
 <div class="contents-search">
+  <h2>"検索結果"</h2>
   <% @events.each do |event| %>
     <div class="show__title2">
       タイトル: 　<%= event.title %>
