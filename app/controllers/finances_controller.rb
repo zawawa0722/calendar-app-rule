@@ -5,8 +5,8 @@ class FinancesController < ApplicationController
     @finances = Finance.where(user_id: current_user.id)
 
     # 2021年の月を配列で取得
-    date_from  = Date.parse('2021-01-01')
-    date_to    = Date.parse('2021-12-31')
+    date_from  = Date.parse('2022-01-01')
+    date_to    = Date.parse('2022-12-31')
     date_range = date_from..date_to
     @date_months = date_range.map {|d| Date.new(d.year, d.month, 1) }.uniq
     @date_months.map {|d| d.strftime "%m/%Y" }
@@ -34,7 +34,6 @@ class FinancesController < ApplicationController
       @food_total = [@c.pluck(:consumption).sum]
       @d = @b1.where(start_time: @year[1])
       @food_total.push(@d.pluck(:consumption).sum)
-
       @e = @b1.where(start_time: @year[2])
       @food_total.push(@e.pluck(:consumption).sum)
 
@@ -304,7 +303,4 @@ class FinancesController < ApplicationController
     def sum_finances_other
       @other_date = [@finances.where(item: "雑費").pluck(:consumption).sum]
     end
-    
-    
-
-end
+  end
