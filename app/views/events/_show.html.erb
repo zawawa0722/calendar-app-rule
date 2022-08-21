@@ -5,22 +5,22 @@
     </a>
     <p class="show__title1">予定の詳細</p>
     <div class="show__title2">
-      タイトル:  <%= @event.title %>
+      タイトル: 　<%= @event.title %>
     </div>
     <div class="show__start-time">
-      開始日時:  <%= @event.start_time.strftime('%Y年 %m月 %d日 %H時 %M分') %>
+      開始日時: 　<%= @event.start_time.strftime('%Y年 %m月 %d日 %H時 %M分') %>
     </div>
     <div class="show__end-time">
-      終了日時:  <%= @event.end_time.strftime('%Y年 %m月 %d日 %H時 %M分') %>
+      終了日時: 　<%= @event.end_time.strftime('%Y年 %m月 %d日 %H時 %M分') %>
     </div>
     <div class="show__body">
-        詳細:  <%= @event.body %>
+      　　詳細: 　<%= @event.body %>
     </div>
     <div class="show__item">
-      金額項目:  <%= @item %>
+      金額項目: 　<%= @item %>
     </div>
     <div class="show__consumption">
-          金額:  <%= @consumption %> 円
+      　　金額: 　<%= @consumption %> 円
     </div>
     <div class="show__buttones">
       <%= link_to '変更する', edit_event_path(@event.id), method: :get, class: "show__button__change" %>

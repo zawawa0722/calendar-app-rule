@@ -11,16 +11,16 @@
   <h2>"検索結果"</h2>
   <% @events.each do |event| %>
     <div class="show__title2">
-      タイトル:  <%= event.title %>
+      タイトル: 　<%= event.title %>
     </div>
     <div class="show__start-time">
-      開始日時:  <%= event.start_time.strftime('%Y年 %m月 %d日 %H時 %M分') %>
+      開始日時: 　<%= event.start_time.strftime('%Y年 %m月 %d日 %H時 %M分') %>
     </div>
     <div class="show__end-time">
-      終了日時:  <%= event.end_time.strftime('%Y年 %m月 %d日 %H時 %M分') %>
+      終了日時: 　<%= event.end_time.strftime('%Y年 %m月 %d日 %H時 %M分') %>
     </div>
     <div class="show__body">
-        詳細:  <%= event.body %>
+      　　詳細: 　<%= event.body %>
     </div>
   <% end %>
 </div>
