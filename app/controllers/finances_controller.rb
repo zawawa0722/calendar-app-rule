@@ -5,8 +5,8 @@ class FinancesController < ApplicationController
     @finances = Finance.where(user_id: current_user.id)
 
     # 2021年の月を配列で取得
-    date_from  = Date.parse('2021-01-01')
-    date_to    = Date.parse('2021-12-31')
+    date_from  = Date.parse('2022-01-01')
+    date_to    = Date.parse('2022-12-31')
     date_range = date_from..date_to
     @date_months = date_range.map {|d| Date.new(d.year, d.month, 1) }.uniq
     @date_months.map {|d| d.strftime "%m/%Y" }
